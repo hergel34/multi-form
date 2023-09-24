@@ -416,11 +416,9 @@ p {
     user-select: none;
   }
 .container-check.active {
-    border: 1px solid var(--Pastel-blue);
+    border: 1px solid var(--Purplish-blue);
     background-color: var(--Magnolia);
 }
-
-
   .games-container {
     display: flex;
     justify-content: space-between;
@@ -434,7 +432,7 @@ p {
     
   }
   .games-container1 > p {
-    font-size: 15px;
+    font-size: 14px;
      margin-top: 3px;
   }
 
@@ -603,7 +601,7 @@ hr {
     .container {
         display: block;
         background-color: var(--Magnolia);
-        width: 375px;
+        width: 365px;
         height: 650px;
         margin: 0;
         position: relative;
@@ -615,7 +613,7 @@ hr {
 
     .left {
         position: relative;
-        left: 0px;
+        right: 0px;
         /* top: -25px; */
     }
     .left ol {
@@ -633,7 +631,7 @@ hr {
         background-color: var(--White);
         border-radius: 10px;
         top: -75px;
-        left: 18px;
+        left: 12px;
         width: 340px;
         height: 520px;
         padding-top: 18px;
@@ -658,13 +656,20 @@ hr {
         margin: 10px;
         align-items: center;
         gap: 1rem;
-        padding: 2px 15px;
+        /* padding: 52px 15px; */
         height: 90px;
         position: relative;
         right: 12px;
     }
     .option img {
         margin: 0;
+    }
+    p.header {
+        line-height: 1;
+    }
+
+    .month-free {
+        margin-top: -8px;
     }
     .toggle-container {
         position: relative;
@@ -683,8 +688,7 @@ hr {
         position: absolute;
         bottom: -100px;
         left: 160px;
-        width: 150px;
-        display: flex;
+        width: 140px;
     }
     .toggle-container .text {
         left: 30px;
@@ -700,12 +704,29 @@ hr {
     }
     .container-check {
         padding: 15px 0px;
+        left: -10px;
     }
     .checkmark {
         left: 10px;
-        top: 20px;
+        top: 28px;
     }
     .games-container {
         width: 250px;
+    }
+
+    .finishing-container {
+        width: 290px;
+        right: 50px; 
+    }
+    .finishing-container .p1 {
+        margin-top: 0;
+    }
+    .pop-up {
+        width: 300px;
+        right: 60px; 
+    }
+    .pop-up img {
+        position: relative;
+        right: 80px;
     }
 }
