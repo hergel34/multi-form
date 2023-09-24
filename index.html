@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar start -->
+<div class="container">
+    <div class="left">
+        <picture>
+            <source media="(max-width:668px)" srcset="assets/images/bg-sidebar-mobile.svg">
+            <img src="/assets/images/bg-sidebar-desktop.svg" alt="">
+        </picture>
+        <ol>
+            <li class="step1" id="step1">
+                <p><span>Step 1</span></p> 
+                <p>Your info</p>
+            </li>
+            <li class="step2 hide1" id="step2">
+                <p><span>Step 2</span></p>
+                <p>Select plan</p>
+            </li>
+            <li class="step3 hide1" id="step3">
+                <p><span>Step 3</span></p>
+                <p>Add-ons</p>
+            </li>
+            <li class="step4 hide1" id="step4">
+                <p><span>Step 4</span></p>
+                <p>Summary</p>
+            </li>
+        </ol>
+    </div>
+   <!-- Sidebar end -->
+    
+   <!-- Step 1 start -->
+    <div class="right">
+        <div class="personal-info-container" id="Page1">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+            <form action="" id="mainForm" method="post">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="e.g. Stephen King" autofocus>
+            
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="e.g. stephenking@lorem.com">
+            
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="e.g. +1 234 567 890">
+
+                <!-- buttons    -->
+                <div class="bottom-nav" id="submit-btn">
+                    <button class="button-next next-btn">Next Step</button>             
+                </div>
+            </form>
+        </div>
+        
+      <!-- Step 1 end -->
+    
+      <!-- Step 2 start -->
+        <div class="select-plan-container" id="Page2">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+            <div class="monthly-plan">
+                <div class="option arcade" onclick="option1()" id="arcade">
+                        <img src="assets/images/icon-arcade.svg" alt="">
+                            <div>
+                                <p class="header">Arcade</p>
+                                <p class="monthly" id="test1">$9/mo</p>
+                                <p class="month-free monthly1">2 months free</p>
+                            </div>
+                            <!-- <div class="monthly1@">   -->
+                                <!-- <p id="test1">$90/yr</p> -->
+                                <!-- <p class="month-free">2 months free</p> -->
+                            <!-- </div> -->
+                </div>
+                <div class="option advance" onclick="option2()">
+                        <img src="assets/images/icon-advanced.svg" alt="">
+                        <div>
+                            <p class="header">Advanced</p>
+                            <p class="monthly" id="test2">$12/mo</p>
+                            <p class="month-free monthly1">2 months free</p>
+                        </div>
+                    <!-- <div class="monthly1"> -->
+                        <!-- <p>$120/yr</p> -->
+                        <!-- <p class="month-free">2 months free</p> -->
+                        <!-- </div> -->
+                </div>
+                <div class="option pro" onclick="option3()">
+                        <img src="assets/images/icon-pro.svg" alt="">
+                        <div>
+                            <p class="header">Pro</p>
+                            <p class="monthly" id="test3">$15/mo</p>
+                            <p class="month-free monthly1">2 months free</p>
+                        </div>
+                    <!-- <div class="monthly1"> -->
+                        <!-- <p>$150/yr</p> -->
+                        <!-- <p class="month-free">2 months free</p> -->
+                        <!-- </div> -->
+                </div>
+            </div>
+            <div class="toggle-container">
+                <div class="text">Monthly</div>
+                    <div class="toggle">
+                        <div class="toggle-button" onclick="Animatedtoggle()" id="toggle-btn"></div>
+                    </div>
+                <div class="text1">Yearly</div>
+            </div> 
+            <!-- buttons    -->
+            <div class="" id="go-btn">
+                <button class="go-btn">Go Back</button>
+            </div>
+            <div id="next-btn">
+                <button class="button-next next-btn">Next Step</button>
+            </div>
+        </div>
+      <!-- Step 2 end -->
+    
+      <!-- Step 3 start -->
+    
+        <div class="pick-add-ons-container" id="Page3">
+           <h1>Pick add-ons</h1>
+           <p>Add-ons help enhance your gaming experience.</p>
+                <label class="container-check one">
+                    <div class="games-container">
+                        <div class="games-container1">
+                            <h4>Online service</h4>
+                            <p>Access to multiplayer games</p>
+                        </div>
+                        <p id="per-month1"></p>           
+                    </div>
+                    <input type="checkbox" onclick="check1()" id="checkbtn1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container-check two">
+                    <div class="games-container">
+                        <div class="games-container1">
+                            <h4>Larger storage</h4>
+                            <p>Extra 1TB of cloud save</p>
+                        </div>
+                        <p id="per-month2"></p>
+                    </div>
+                    <input type="checkbox" onclick="check2()" id="checkbtn2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container-check three">
+                    <div class="games-container">
+                        <div class="games-container1">
+                            <h4>Customizable Profile</h4>
+                            <p>Custom theme on your profile</p>
+                        </div>
+                        <p id="per-month3"></p>
+                    </div>
+                    <input type="checkbox" onclick="check3()" id="checkbtn3">
+                    <span class="checkmark"></span>
+                </label>
+            <!-- buttons    -->
+            <div class="" id="go-back">
+                <button class="go-btn">Go Back</button>
+            </div>
+            <div class="" id="go-to-page4">
+                <button class="button-next next-btn">Next Step</button>
+            </div>
+        </div>
+    
+      <!-- Step 3 end -->
+    
+      <!-- Step 4 start -->
+    
+        <div class="finishing-container" id="Page4">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+            <!-- Dynamically add subscription and add-on selections here -->
+            <div class="page4-container">
+                <div>
+                    <div class="p3">
+                        <p class="plan1"><span id="plans">Arcade</span><span id="mo-yr">(Monthly)</span></p>
+                        <p class="p1" id="change"><u>Change</u></p>
+                    </div>
+                        <p id="monthly-value">@</p>
+                </div>
+                <hr>
+                <div>
+                    <div>
+                        <p class="p2">Online Service</p>
+                        <p class="p2">Large storage</p>
+                        <p class="p2">Customizable Profile</p>
+                    </div>
+                    <div>
+                        <p class="p2" id="service-value">@</p>
+                        <p class="p2" id="storage-value">@</p>
+                        <p class="p2" id="customize-value">@</p>
+                    </div>
+                </div>
+            </div>
+            <div class="total1">
+                <p>Total <span id="mo-yr2">(per month)</span></p> <br>
+                <p class="totalbill" id="total-monthly"></p>
+            </div>
+
+            <div id="back-to-page4">
+                <button class="go-btn">Go Back</button>
+            </div>
+            <div id="Confirm">
+                <button class="button-next next-btn color">Confirm</button>
+            </div>
+        </div>
+    
+      <!-- Step 4 end -->
+    
+      <!-- Step 5 start -->
+    
+      <div class="pop-up" id="Page5">
+        <div>
+            <img src="./assets/images/icon-thank-you.svg" alt="">
+        </div>
+        <h2>Thank you!</h2>
+        <p>
+            Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free
+            to email us at <a href="">support@loremgaming.com.</a>
+        </p>
+      </div>
+      <!-- Step 5 end -->  
+    </div>
+</div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
