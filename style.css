@@ -601,7 +601,7 @@ hr {
     .container {
         display: block;
         background-color: var(--Magnolia);
-        width: 365px;
+        width: 374px;
         height: 650px;
         margin: 0;
         position: relative;
@@ -631,7 +631,7 @@ hr {
         background-color: var(--White);
         border-radius: 10px;
         top: -75px;
-        left: 12px;
+        left: 17px;
         width: 340px;
         height: 520px;
         padding-top: 18px;
@@ -681,13 +681,13 @@ hr {
     .go-btn {
         position: absolute;
         bottom: -100px;
-        left: -70px;
+        left: -75px;
         width: 150px;
     }
     .button-next {
         position: absolute;
         bottom: -100px;
-        left: 160px;
+        left: 172px;
         width: 140px;
     }
     .toggle-container .text {
