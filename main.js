@@ -1,4 +1,7 @@
 
+let selectedPlan = 0;
+let planScope = 'monthly';
+
 const Page1E1 = document.getElementById('Page1');
 const Page2E1 = document.getElementById('Page2');
 const Page3E1 = document.getElementById('Page3');
@@ -19,6 +22,21 @@ const step4E1 = document.getElementById('step4');
 const goPage4 = document.getElementById('go-to-page4');
 const backPage4 = document.getElementById('back-to-page4');
 const confirmE1 = document.getElementById('Confirm');
+
+var selectplanM = ["Arcade(Monthly)", "Advance(Monthly", "Pro(Monthly)"];
+var selectplanY = ["Arcade(Yearly)", "Advance(Yearly)", "Pro(Yearly)"];
+var month = [9, 12, 15];
+var year = [90, 120, 150];
+
+var serviceM = [0, 1, 2, 2 ];
+var serviceY =[0, 10, 20, 20];
+
+
+var planScope1 = 'monthly';
+var selectedPlan1 = 0;
+var selectedPlan2 = 0;
+var selectedPlan3 = 0;
+
 
 
 submitBtnE1.addEventListener("click", function(e) {
@@ -47,7 +65,59 @@ goPage4.addEventListener("click", () => {
     Page4E1.classList.add('active');
     step3E1.classList.add('hide1');
     step4E1.classList.remove('hide1');
-})
+
+    const plansText = document.getElementById('plans');
+    const value =  document.getElementById('monthly-value');
+    var v1 = serviceM[selectedPlan1];
+    var v2 = serviceM[selectedPlan2];
+    var v3 = serviceM[selectedPlan3];
+
+    let v4 = serviceY[selectedPlan1];
+    let v5 = serviceY[selectedPlan2];
+    let v6 = serviceY[selectedPlan3];
+
+    let v7 = month[selectedPlan];
+    let v8 = year[selectedPlan];
+
+    let sum1 = v1 + v2 + v3 + v7;
+    let sum2 = v4 + v5 + v6 + v8;
+
+    if(planScope === 'monthly'){
+        plansText.textContent = selectplanM[selectedPlan];
+        value.textContent = "$" + month[selectedPlan]+ "/mo";
+        // value.style.color = "hsl(213, 96%, 18%)";
+
+        document.getElementById('mo-yr2').innerHTML = "(per month)"
+
+        document.getElementById('service-value').textContent = "$" + serviceM[selectedPlan1] + "/mo";
+        document.getElementById('storage-value').textContent = "$" + serviceM[selectedPlan2] + "/mo";
+        document.getElementById('customize-value').textContent = "$" + serviceM[selectedPlan3] + "/mo";
+
+        document.getElementById('total-monthly').innerHTML = "$" + sum1 + "/mo";
+
+
+        /*
+            var selectplanM = ["Arcade(Monthly)", "Advance(Monthly", "Pro(Monthly)"];
+            var selectplanY = ["Arcade(Yearly)", "Advance(Yearly)", "Pro(Yearly)"];
+            var month = ["9", "12", "15"];
+            var year = ["90", "120", "150"];
+        */
+    }
+    else{
+        plansText.textContent = selectplanY[selectedPlan];
+        value.textContent = "$" + year[selectedPlan] + "/yr";
+        document.getElementById('mo-yr2').innerHTML = "(per year)";
+
+
+        document.getElementById('service-value').textContent = "$" + serviceY[selectedPlan1] + "/yr";
+        document.getElementById('storage-value').textContent = "$" + serviceY[selectedPlan2] + "/yr";
+        document.getElementById('customize-value').textContent = "$" + serviceY[selectedPlan3] + "/yr";
+
+        document.getElementById('total-monthly').innerHTML = "$" + sum2 + "/yr";
+
+    }
+});
+
 
 nextE1.addEventListener("click", function(e) {
 
@@ -74,12 +144,12 @@ backPage4.addEventListener('click', () => {
     Page4E1.classList.remove('active');
     step3E1.classList.remove('hide1');
     step4E1.classList.add('hide1');
+
 })
 
 confirmE1.addEventListener('click', () => {
     Page4E1.classList.remove('active');
     Page5E1.classList.add('active');
-    step4E1.classList.add('hide1');
 })
 
 
@@ -99,18 +169,13 @@ let testE3 = document.getElementById("test3");
 
 
 
-let m = document.getElementById("monthly-value");
+// let m = document.getElementById("monthly-value");
 // let y = document.getElementById("yearly-value");
-let total = document.getElementById("total-monthly");
+// let total = document.getElementById("total-monthly");
 let sum;
 let arcade;
 let advance;
 let pro;
-
-var selectplanM = ["Arcade(Monthly)", "Advance(Monthly", "Pro(Monthly)"];
-var selectplanY = ["Arcade(Yearly)", "Advance(Yearly)", "Pro(Yearly)"];
-var month = ["9", "12", "15"];
-var year = ["90", "120", "150"];
 
 
 
@@ -142,9 +207,9 @@ let yr = "(Yearly)";
 // testE1.innerHTML = "+$" + e + "/mo";
 
 
-sum = c + d;
+// sum = serviceY[selectedPlan3] + d;
 
-total.innerText = "+$" + sum + "/mo";
+// total.innerText = "+$" + sum + "/mo";
 
 // document.getElementById("total-monthly").innerText = "+$" + z + "/mo" ;
 
@@ -162,12 +227,14 @@ let x = document.getElementById('per-month3');
 
 
     function Animatedtoggle() {
+
     toggle.classList.toggle("active"); 
 
             // label color change
     if(toggle.classList.contains("active")) {
         text.classList.add("active");
         text1.classList.add("active");
+        planScope = 'yearly';
 
         // document.getElementById("mo-yr").innerHTML = yr;  
         // document.getElementById("mo-yr2").innerHTML = "(per year)";
@@ -175,6 +242,7 @@ let x = document.getElementById('per-month3');
     else {
         text.classList.remove("active");
         text1.classList.remove("active");
+        planScope = 'monthly';
 
         // document.getElementById("mo-yr").innerHTML = mo;
         // document.getElementById("mo-y2").innerHTML = "(per month)";
@@ -244,7 +312,7 @@ function option1() {
     arcade1.classList.add("active");
     advance1.classList.remove("active");
     pro1.classList.remove("active"); 
-
+    selectedPlan = 0;
 }
 
 
@@ -252,6 +320,7 @@ function option2() {
     advance1.classList.add("active");
     arcade1.classList.remove("active");
     pro1.classList.remove("active"); 
+    selectedPlan = 1;
 
 }
 
@@ -259,6 +328,7 @@ function option3() {
     pro1.classList.add("active");
     advance1.classList.remove("active");
     arcade1.classList.remove("active");
+    selectedPlan = 2;
 }
 
 
@@ -270,17 +340,19 @@ let checkboxE2 = document.getElementById('checkbtn2');
 let checkboxE3 = document.getElementById('checkbtn3');
 
 
-let oneE1 = document.querySelector(".one");
-let twoE1 = document.querySelector(".two");
-let threeE1 = document.querySelector(".three");
+let oneE1 = document.querySelector("one");
+let twoE1 = document.querySelector("two");
+let threeE1 = document.querySelector("three");
 
 
 function check1() {
     if (checkboxE1.checked == true) 
         {
+        selectedPlan1 = 1;   
         oneE1.classList.add("active");
     }
     else {
+        selectedPlan1 = 0;
         oneE1.classList.remove("active");
     }
 }
@@ -288,9 +360,11 @@ function check1() {
 function check2() {
     if (checkboxE2.checked == true) 
         {
+        selectedPlan2 = 2;
         twoE1.classList.add("active");
     }
     else {
+        selectedPlan2 = 0;
         twoE1.classList.remove("active");
     }
 }
@@ -298,9 +372,11 @@ function check2() {
 function check3() {
     if (checkboxE3.checked == true) 
         {
+        selectedPlan3 = 3;
         threeE1.classList.add("active");
     }
     else {
+        selectedPlan3 = 0;
         threeE1.classList.remove("active");
     }
 }

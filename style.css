@@ -35,7 +35,7 @@ body {
 
 .container {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: auto;
     background-color: var(--White);
     border-radius: 10px;
     padding: 1.5rem 0rem 1.5rem 1.5rem;
@@ -44,8 +44,9 @@ body {
 }
 .left {
     display: flex;
-    position: relative;   
+    position: relative; 
 }
+
 
 .left ol p span {
     color: var(--Light-gray);
@@ -519,7 +520,7 @@ p {
 .page4-container > div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     /* height: 100px; */
     padding: 20px;  
 }
@@ -530,8 +531,15 @@ p {
 
 .finishing-container .p2 {
     margin-bottom: 10px;
+    /* color: var(--Marine-blue); */
+}
+
+.finishing-container .color1 {
+    color: var(--Marine-blue);
 
 }
+
+
 .finishing-container .p1 {
     margin-top: 10px;
     cursor: pointer;
@@ -564,7 +572,7 @@ hr {
 
 .pop-up h2 {
     color: var(--Marine-blue);
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 5px;
     text-align: center;
 }
@@ -674,8 +682,9 @@ hr {
     .toggle-container {
         position: relative;
         left: 0px;
-        width: 280px;
+        width: 290px;
         top: 10px;
+        border-radius: 5px;
         
     }
     .go-btn {
