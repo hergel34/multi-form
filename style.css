@@ -321,13 +321,13 @@ p {
 label.toggle {
     width: 40px;
     height: 20px;
-    /* display: inline-block; */
+    display: inline-block;
     background-color: var(--Marine-blue);
     border-radius: 15px;
     cursor: pointer;
 }
 
-label input {
+label.toggle input {
     width: 0;
     height: 0;
     
@@ -339,20 +339,16 @@ label > input[type="checkbox"]::before {
     border-radius: 50%;
     content: "";
     background-color: white;
-    display: inline-block;
+    display: flex;
     margin-top: 2px;
     margin-left: 2px;
     transition: margin-left 0.4s ease-in-out, background-color 0.4s 0.3s;
     cursor: pointer;
+    
 }
 
 
-/* label:has(> input:checked) {
-    background-color: red;
-} */
-
 label > input[type="checkbox"]:checked::before {
-    /* background-color: green; */
     margin-left: 23px;
 }
 
