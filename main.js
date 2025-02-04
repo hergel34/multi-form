@@ -260,15 +260,15 @@ let x = document.getElementById('per-month3');
             // per month or year plan
 
      if (toggle.classList.contains("active")) {
-        testE1.innerText = "+$" + arcadeY + "/yr";
-        testE2.innerText = "+$" + advanceY + "/yr";
-        testE3.innerText = "+$" + proY + "/yr";
+        testE1.innerText = "$" + arcadeY + "/yr";
+        testE2.innerText = "$" + advanceY + "/yr";
+        testE3.innerText = "$" + proY + "/yr";
 
     }
     else {
-        testE1.innerText = "+$" + arcadeM + "/mo";
-        testE2.innerText = "+$" + advanceM + "/mo";
-        testE3.innerText = "+$" + proM + "/mo";
+        testE1.innerText = "$" + arcadeM + "/mo";
+        testE2.innerText = "$" + advanceM + "/mo";
+        testE3.innerText = "$" + proM + "/mo";
     }
          // check box value
 
