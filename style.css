@@ -321,7 +321,7 @@ p {
 label.toggle {
     width: 40px;
     height: 20px;
-    display: inline-block;
+    /* display: inline-block; */
     background-color: var(--Marine-blue);
     border-radius: 15px;
     cursor: pointer;
