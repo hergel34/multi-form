@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
@@ -8,6 +11,11 @@
   <link rel="stylesheet" href="style.css">
 
   <title>Frontend Mentor | Multi-step form</title>
+
+    <meta property="og:title" content="The Rock"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="./assets/images/favicon-32x32.png" />
+
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -74,7 +82,7 @@
             <h1>Select your plan</h1>
             <p>You have the option of monthly or yearly billing.</p>
             <div class="monthly-plan">
-                <div class="option arcade" onclick="option1()">
+                <div class="option arcade active" onclick="option1()">
                         <img src="assets/images/icon-arcade.svg" alt="">
                             <div>
                                 <p class="header">Arcade</p>
@@ -113,9 +121,10 @@
             </div>
             <div class="toggle-container">
                 <div class="text">Monthly</div>
-                    <div class="toggle">
+                    <!-- <div class="toggle">
                         <div class="toggle-button" onclick="Animatedtoggle()" id="toggle-btn"></div>
-                    </div>
+                    </div> -->
+                    <label class="toggle" for="toggle-btn"><input class="toggle-button" onclick="Animatedtoggle()" id="toggle-btn" name="toggle" type="checkbox"></label>
                 <div class="text1">Yearly</div>
             </div> 
             <!-- buttons    -->
@@ -238,7 +247,7 @@
 </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Hergel</a>.
+    Coded by <a href="#">Your Name Here</a>.
   </div>
   <script src="main.js"></script>
 </body>

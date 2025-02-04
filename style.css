@@ -76,15 +76,17 @@ body {
 .left ol li::before {
     content: "" counter(my-awesome-counter);
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border: 1px solid white;
     border-radius: 100%;
     top: 10px;
-    left: -45px;
+    left: -50px;
     color: white;
     text-align: center;
     transition: 0.7s ease-out;
+    line-height: 2;
+
 }
 
 .left ol .step1::before {
@@ -240,7 +242,7 @@ p {
 
 .option {
     width: 200px;
-    border: 1px solid var(--Light-gray);
+    border: 2px solid var(--Light-gray);
     text-align: left;
     padding: 1rem;
     border-radius: 10px;
@@ -307,16 +309,54 @@ p {
     height: 40px;
 }
 
-.toggle-container .toggle {
+/* .toggle-container .toggle {
     position: relative;
     background-color: var(--Marine-blue);
     width: 35px;
     height: 18px;
     border-radius: 200px;
     cursor: pointer;
+} */
+
+label.toggle {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    background-color: var(--Marine-blue);
+    border-radius: 15px;
+    cursor: pointer;
 }
 
-.toggle-container .toggle .toggle-button {
+label input {
+    width: 0;
+    height: 0;
+    
+}
+
+label > input[type="checkbox"]::before {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    content: "";
+    background-color: white;
+    display: inline-block;
+    margin-top: 2px;
+    margin-left: 2px;
+    transition: margin-left 0.4s ease-in-out, background-color 0.4s 0.3s;
+    cursor: pointer;
+}
+
+
+/* label:has(> input:checked) {
+    background-color: red;
+} */
+
+label > input[type="checkbox"]:checked::before {
+    /* background-color: green; */
+    margin-left: 23px;
+}
+
+/* .toggle-container .toggle .toggle-button {
     position: absolute;
     background-color: white;
     width: 12px;
@@ -332,7 +372,7 @@ p {
 
 .toggle-container .toggle.active .toggle-button {
     transform: translate(17px);
-}
+} */
 
 .toggle-container .text {
     color: var(--Marine-blue);
